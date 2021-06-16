@@ -8,7 +8,7 @@ You need
 ssh-keygen -b 4096
 ````
 
-## 1 - Encrypted server setup
+## 1. Encrypted server setup
 Install the required packets on the server:
 ````powershell
 sudo apt update && sudo apt dist-upgrade
@@ -20,19 +20,19 @@ sudo apt -f install
 ````
 We get a warning about `dropbear: WARNING: Invalid authorized_keys file, remote unlocking of cryptroot via SSH won't work!`. This is expected and we ignore this.
 
-## 2 - On your machine
+## 2. On your machine
 Copy the output from your public SSH key
 ````powershell
 cat ~/.ssh/id_rsa.pub 
 ````
 
-## 3 - Paste the content to your encrypted server 
+## 3. Paste the content to your encrypted server 
 Open the `autorized_keys` file and paste it into it.
 ````powershell
 sudo nano /etc/dropbear-initramfs/authorized_keys
 ````
 
-## 4 - Create an unlock script
+## 4. Create an unlock script
 ````powershell
 sudo nano /etc/initramfs-tools/hooks/crypt_unlock.sh
 ````
@@ -89,7 +89,7 @@ and make it executable by running
 chmod +x /etc/initramfs-tools/hooks/crypt_unlock.sh
 ````
 
-## 5 - Create a static IP
+## 5. Create a static IP
 If you skip this step DHCP is used.
 Open the file
 ````powershell
@@ -103,23 +103,23 @@ and add a line which matches your network and network card
 IP=192.168.1.10::192.168.1.1:255.255.255.0::eth0:off
 ````
 
-## 6 - Update initramfs
+## 6. Update initramfs
 Command
 ````powershell
 sudo update-initramfs -u
 ````
-## 7 - Disable DropBear service after successful decryption
+## 7. Disable DropBear service after successful decryption
 This makes OpenSSH being used after.
 ````powershell
 sudo update-rc.d dropbear disable
 ````
 
-## 8 - Reboot the encrypted server
+## 8. Reboot the encrypted server
 ````powershell
 reboot
 ````
 
-## 9 - SSH into it as root
+## 9. SSH into it as root
 ````powershell
 ssh root@192.168.1.10
 ssh root@192.168.1.254 [-i ~/.ssh/id_rsa]
