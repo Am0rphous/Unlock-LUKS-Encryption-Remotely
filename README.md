@@ -89,7 +89,7 @@ and make it executable by running
 chmod +x /etc/initramfs-tools/hooks/crypt_unlock.sh
 ````
 
-## 5. Create a static IP
+## 5. Create a static IP and change the default SSH port
 If you skip this step DHCP is used.
 Open the file
 ````powershell
@@ -102,6 +102,13 @@ and add a line which matches your network and network card
 
 IP=192.168.1.10::192.168.1.1:255.255.255.0::eth0:off
 ````
+OPTIONAL: To change the default SSH port, open the file `/etc/dropbear-initramfs/config` and add e.g.
+````powershell
+DROPBEAR_OPTIONS="-s -I 30 -p 54000"
+````
+-s: disable password logins
+-I 30: idle_timeout, disconnect after 30 sec if no traffic is transmitted
+-p 54000: listen on port 54000
 
 ## 6. Update initramfs
 Command
@@ -122,7 +129,7 @@ reboot
 ## 9. SSH into it as root
 ````powershell
 ssh root@192.168.1.10
-ssh root@192.168.1.254 [-i ~/.ssh/id_rsa]
+ssh root@192.168.1.10 [-i ~/.ssh/id_rsa]
 ````
   ### 9.1 Decrypt the drive
   ````powershell
