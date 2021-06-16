@@ -27,7 +27,7 @@ cat ~/.ssh/id_rsa.pub
 ````
 
 ## 3 - Paste the content to your encrypted server 
-Open the autorized_keys file and paste the 
+Open the `autorized_keys` file and paste it into it.
 ````powershell
 sudo nano /etc/dropbear-initramfs/authorized_keys
 ````
