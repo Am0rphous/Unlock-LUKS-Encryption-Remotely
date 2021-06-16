@@ -106,8 +106,8 @@ OPTIONAL: To change the default SSH port, open the file `/etc/dropbear-initramfs
 ````powershell
 DROPBEAR_OPTIONS="-s -I 30 -p 54000"
 ````
-Explenation
-````powershell
+Explanation
+````bash
 -s: disable password logins
 -I 30: idle_timeout, disconnect after 30 sec if no traffic is transmitted
 -p 54000: listen on port 54000
