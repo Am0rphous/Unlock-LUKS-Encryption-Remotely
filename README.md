@@ -1,5 +1,5 @@
 # Unlock-LUKS-Encryption-Remotely
-How to unlock a LUKS encrypted Linux server remotely with [Dropbear SSH](https://github.com/mkj/dropbear). Homepage: [matt.ucc.asn.au/dropbear/dropbear.html](https://matt.ucc.asn.au/dropbear/dropbear.html)
+How to unlock a LUKS encrypted Linux server remotely with [Dropbear SSH](https://github.com/mkj/dropbear). [Homepage](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 You need
 1. An encrypted physical/virtual Linux server with e.g. Ubuntu 20.04.
