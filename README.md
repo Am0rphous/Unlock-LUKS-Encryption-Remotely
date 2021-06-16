@@ -104,7 +104,7 @@ IP=192.168.1.10::192.168.1.1:255.255.255.0::eth0:off
 ````
 
 ## 6 - Update initramfs
-Commands
+Command
 ````powershell
 sudo update-initramfs -u
 ````
@@ -124,9 +124,20 @@ reboot
 ssh root@192.168.1.10
 ssh root@192.168.1.254 [-i ~/.ssh/id_rsa]
 ````
-### 9.1 Decrypt the drive
-````powershell
-unlock                # this
-cryptroot-unlock      # or this
-````
+  ### 9.1 Decrypt the drive
+  ````powershell
+  unlock                # might hang
+  cryptroot-unlock      # or this
+  ````
+  Expected output
+  ````powershell
+  # cryptroot-unlock
+  Please unlock disk sda5_crypt:
+  cryptsetup: sda5_crypt set up successfully
+  # 
+  ````
+  
 
+## Sources
+- [How do I get dropbear to actually work with initramfs?](https://askubuntu.com/questions/640815/how-do-i-get-dropbear-to-actually-work-with-initramfs)
+- [https://github.com/mkj/dropbear](https://github.com/mkj/dropbear)
