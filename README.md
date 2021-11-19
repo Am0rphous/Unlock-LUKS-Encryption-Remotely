@@ -2,7 +2,7 @@
 How to unlock a LUKS encrypted Linux server remotely with [Dropbear SSH](https://github.com/mkj/dropbear). [Homepage](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 You need
-1. An encrypted physical/virtual Linux server with e.g. Ubuntu 20.04.
+1. An encrypted physical/virtual Linux server with Linux, e.g. Ubuntu 20.04.
 2. A SSH client on your machine with a generated ssh-keygen. We can create a 4096 bits key by running:
 ````powershell
 ssh-keygen -b 4096
