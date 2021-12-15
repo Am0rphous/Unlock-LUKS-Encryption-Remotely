@@ -1,4 +1,8 @@
 # Unlock-LUKS-Encryption-Remotely
+
+Useful
+- [Chkboot](https://github.com/grazzolini/chkboot) - chkboot is a tool to help detect changes to an unencrypted /boot partition.
+
 How to unlock a LUKS encrypted Linux server remotely with [Dropbear SSH](https://github.com/mkj/dropbear). [Homepage](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 You need
